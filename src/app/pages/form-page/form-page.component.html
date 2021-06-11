@@ -1,0 +1,74 @@
+<app-wizard>
+  <ng-template appWizardStep name="Shipping">
+    <div class="form-container">
+      <form class="contact" [formGroup]="reactiveForm">
+        <h3>Enter shipping details</h3>
+        <div class="row">
+          <input
+            type="text"
+            placeholder="First name"
+            formControlName="firstName"
+          />
+          <input
+            type="text"
+            placeholder="Last name"
+            formControlName="lastName"
+          />
+        </div>
+        <div class="row">
+          <input
+            type="number"
+            placeholder="Phone number"
+            formControlName="phone"
+          />
+          <input
+            type="email"
+            placeholder="Email address"
+            formControlName="email"
+          />
+        </div>
+        <div formGroupName="address">
+          <div class="row">
+            <input
+              type="text"
+              placeholder="Country"
+              formControlName="country"
+            />
+            <input type="text" placeholder="City" formControlName="city" />
+          </div>
+          <div class="row">
+            <input
+              type="text"
+              placeholder="Street name and house number"
+              formControlName="street"
+            />
+            <input
+              type="text"
+              placeholder="Apartment, suite, unit etc. (optional)"
+              formControlName="apartment"
+            />
+            <input
+              placeholder="Postal code"
+              type="text"
+              formControlName="postalCode"
+            />
+          </div>
+        </div>
+
+        <!-- <button
+            class="button-submit"
+            type="submit"
+            [disabled]="reactiveForm.invalid || reactiveForm.pristine"
+          >
+            Submit
+          </button> -->
+      </form>
+    </div>
+  </ng-template>
+  <ng-template appWizardStep name="Payment">
+    <div>2nd step form (payment)</div>
+  </ng-template>
+  <ng-template appWizardStep name="Review">
+    <div>Review order details</div>
+  </ng-template>
+</app-wizard>

@@ -1,0 +1,21 @@
+<div class="step-bubbles-container">
+  <ng-container *ngFor="let step of steps | async; let lastItem = last">
+    <div
+      [ngClass]="{
+        'step-complete': step.isComplete,
+        'step-incomplete': !step.isComplete,
+        'step-current': (currentStep | async)?.stepIndex === step.stepIndex
+      }"
+      class="step-bubble"
+    >
+      {{ step.stepIndex }}
+    </div>
+    <div *ngIf="!lastItem" class="step-divider"></div>
+  </ng-container>
+</div>
+
+<div class="step-titles-container">
+  <ng-container *ngFor="let step of steps | async">
+    <div class="step-name">{{ step.stepTitle }}</div>
+  </ng-container>
+</div>
