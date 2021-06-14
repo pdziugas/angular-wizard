@@ -10,7 +10,6 @@ import { StepperModel } from 'src/app/models/stepper.model';
 })
 export class WizardComponent {
   @Input() step!: StepperModel;
-  // currentStep!: StepperModel;
 
   @ContentChildren(WizardStepDirective)
   stepsQueryList!: QueryList<WizardStepDirective>;
@@ -21,13 +20,9 @@ export class WizardComponent {
   constructor(private router: Router) {}
 
   nextStep() {
-    // TODO: if last step - submit, else next step
-
     if (!this.isLastStep()) {
-      //   // this.stepsService.nextStep();
       this.stepIndex = this.stepIndex + 1;
     } else {
-      console.log('submit wiz');
       this.onSubmit();
     }
   }
@@ -42,8 +37,6 @@ export class WizardComponent {
 
   ngAfterContentInit() {
     this.steps = this.stepsQueryList.map((i) => i);
-    // TODO: remove this console.log statement
-    console.log(this.steps);
   }
 
   isLastStep(): boolean {

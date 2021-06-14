@@ -1,8 +1,8 @@
 <app-wizard>
-  <ng-template appWizardStep name="Shipping">
+  <ng-template appWizardStep [invalid]="shippingForm.invalid" name="Shipping">
     <div class="form-container">
-      <form class="contact" [formGroup]="reactiveForm">
-        <h3>Enter shipping details</h3>
+      <form class="contact" [formGroup]="shippingForm">
+        <h3>Your shipping details</h3>
         <div class="row">
           <input
             type="text"
@@ -54,19 +54,54 @@
             />
           </div>
         </div>
-
-        <!-- <button
-            class="button-submit"
-            type="submit"
-            [disabled]="reactiveForm.invalid || reactiveForm.pristine"
-          >
-            Submit
-          </button> -->
       </form>
     </div>
   </ng-template>
-  <ng-template appWizardStep name="Payment">
-    <div>2nd step form (payment)</div>
+  <ng-template appWizardStep [invalid]="paymentForm.invalid" name="Payment">
+    <div class="form-container">
+      <form class="contact" [formGroup]="paymentForm">
+        <h3>Your payment details</h3>
+        <div class="row">
+          <input
+            type="text"
+            placeholder="First name"
+            formControlName="firstName"
+          />
+          <input
+            type="text"
+            placeholder="Last name"
+            formControlName="lastName"
+          />
+        </div>
+        <div class="row">
+          <input
+            type="text"
+            placeholder="1234 **** **** ****"
+            formControlName="cardNumber"
+          />
+        </div>
+        <div formGroupName="cardData">
+          <div class="row">
+            <input
+              type="number"
+              placeholder="Exp. Month"
+              formControlName="expMonth"
+            />
+            <input
+              type="number"
+              placeholder="Exp. Year"
+              formControlName="expYear"
+            />
+            <input
+              type="number"
+              placeholder="CVV"
+              formControlName="cvv"
+              ng-maxlength="3"
+            />
+          </div>
+        </div>
+      </form>
+    </div>
   </ng-template>
   <ng-template appWizardStep name="Review">
     <div>Review order details</div>

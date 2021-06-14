@@ -1,5 +1,4 @@
 <div class="form-page">
-  <!-- <app-stepper></app-stepper> -->
   <div class="step-bubbles-container">
     <ng-container
       *ngFor="let step of steps; let lastItem = last; let i = index"
@@ -42,6 +41,12 @@
     >
       Prev
     </button>
-    <button class="form-btn" (click)="nextStep()">{{ buttonText() }}</button>
+    <button
+      class="form-btn"
+      [disabled]="steps[stepIndex].invalid"
+      (click)="nextStep()"
+    >
+      {{ buttonText() }}
+    </button>
   </div>
 </div>
