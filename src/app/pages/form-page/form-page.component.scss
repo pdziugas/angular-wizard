@@ -14,17 +14,17 @@
 
 .contact {
   background: $color-card-background;
-  padding: 2.5rem;
+  padding: $spacer-3;
   margin: 15rem 0;
-  box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-  border-radius: 1rem;
+  box-shadow: $card-shadow-0;
+  border-radius: $spacer-1;
 }
 
 .contact h3 {
   display: block;
-  font-size: 3rem;
+  font-size: $title-font-size;
   font-weight: 400;
-  margin-bottom: 1rem;
+  margin-bottom: $spacer-1;
 }
 
 .contact input {
@@ -32,31 +32,46 @@
   background: $color-input-field;
   border: none;
   color: $color-high-contrast;
-  border-radius: 1rem;
-  //   margin: 0 0 0.5rem;
-  margin: 1rem;
-  padding: 1rem;
+  border-radius: $spacer-1;
+  margin: $spacer-1;
+  padding: $spacer-1;
 }
 
-// .button-submit {
-//   display: block;
-//   width: 100%;
-//   margin: 1rem 0rem 0rem;
-//   border-radius: 1rem;
-//   color: $color-high-contrast;
-//   background-color: $color-primary;
-//   height: 3rem;
+.review-details-block {
+  background: $color-card-background;
+  padding: $spacer-3;
+  margin: 15rem 0;
+  box-shadow: $card-shadow-0;
+  border-radius: $spacer-1;
 
-//   &:hover {
-//     background: $color-primary;
-//     transition: background-color 0.3s ease-in-out;
-//   }
+  & h3 {
+    display: block;
+    font-size: $title-font-size;
+    font-weight: 400;
+    margin-bottom: $spacer-2;
+  }
+}
 
-//   &:active {
-//     box-shadow: inset 0 1px 3px rgba(177, 43, 43, 0.5);
-//   }
+.divider {
+  height: 1px;
+  background: $color-dark-grey;
+  flex: 1;
+  margin: 2rem 1rem;
+}
 
-//   &:disabled {
-//     background-color: #6196b1;
-//   }
-// }
+.placeholder {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: $spacer-0;
+
+  &-text {
+    font-weight: 600;
+    font-size: $default-font-size;
+    margin-right: $spacer-1;
+  }
+}
+
+.data-output {
+  font-size: $default-font-size;
+}

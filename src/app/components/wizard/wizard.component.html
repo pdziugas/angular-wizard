@@ -29,7 +29,6 @@
     *ngFor="let step of steps; let i = index"
     [style.display]="i === stepIndex ? 'block' : 'none'"
   >
-    <!-- <h1>{{ step.name }}</h1> -->
     <ng-container *ngTemplateOutlet="step.templateRef"></ng-container>
   </div>
 
@@ -39,14 +38,14 @@
       *ngIf="stepIndex !== 0"
       (click)="prevStep()"
     >
-      Prev
+      Previous
     </button>
     <button
       class="form-btn"
       [disabled]="steps[stepIndex].invalid"
       (click)="nextStep()"
     >
-      {{ buttonText() }}
+      {{ isLastStep() ? "Finish" : "Continue" }}
     </button>
   </div>
 </div>

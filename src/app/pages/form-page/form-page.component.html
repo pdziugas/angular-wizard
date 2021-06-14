@@ -104,6 +104,92 @@
     </div>
   </ng-template>
   <ng-template appWizardStep name="Review">
-    <div>Review order details</div>
+    <div class="review-details-block">
+      <h3>Shipping information:</h3>
+      <div class="row">
+        <div class="placeholder">
+          <div class="placeholder-text">First name:</div>
+          <div class="data-output">{{ shippingForm.value.firstName }}</div>
+        </div>
+        <div class="placeholder">
+          <div class="placeholder-text">Last name:</div>
+          <div class="data-output">{{ paymentForm.value.lastName }}</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="placeholder">
+          <div class="placeholder-text">Phone:</div>
+          <div class="data-output">{{ shippingForm.value.phone }}</div>
+        </div>
+        <div class="placeholder">
+          <div class="placeholder-text">Email:</div>
+          <div class="data-output">{{ shippingForm.value.email }}</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="placeholder">
+          <div class="placeholder-text">Country:</div>
+          <div class="data-output">
+            {{ shippingForm.value.address.country }}
+          </div>
+        </div>
+        <div class="placeholder">
+          <div class="placeholder-text">City:</div>
+          <div class="data-output">{{ shippingForm.value.address.city }}</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="placeholder">
+          <div class="placeholder-text">Street:</div>
+          <div class="data-output">{{ shippingForm.value.address.street }}</div>
+        </div>
+        <div class="placeholder">
+          <div class="placeholder-text">Apartment:</div>
+          <div class="data-output">
+            {{ shippingForm.value.address.apartment }}
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="placeholder">
+          <div class="placeholder-text">Postal code:</div>
+          <div class="data-output">
+            {{ shippingForm.value.address.postalCode }}
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <h3>Payment information:</h3>
+      <div class="row">
+        <div class="placeholder">
+          <div class="placeholder-text">Cardholder:</div>
+          <div class="data-output">
+            {{ paymentForm.value.firstName }} {{ paymentForm.value.lastName }}
+          </div>
+        </div>
+        <div class="placeholder">
+          <div class="placeholder-text">Card number:</div>
+          <div class="data-output">{{ paymentForm.value.cardNumber }}</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="placeholder">
+          <div class="placeholder-text">Card exp. month:</div>
+          <div class="data-output">
+            {{ paymentForm.value.cardData.expMonth }}
+          </div>
+        </div>
+        <div class="placeholder">
+          <div class="placeholder-text">Card exp. year:</div>
+          <div class="data-output">
+            {{ paymentForm.value.cardData.expYear }}
+          </div>
+        </div>
+        <div class="placeholder">
+          <div class="placeholder-text">Card cvv:</div>
+          <div class="data-output">{{ paymentForm.value.cardData.cvv }}</div>
+        </div>
+      </div>
+    </div>
   </ng-template>
 </app-wizard>

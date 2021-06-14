@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { StepsService } from './steps.service';
+import { WizardService } from './wizard.service';
 
-describe('StepsService', () => {
-  let service: StepsService;
+describe('WizardService', () => {
+  let service: WizardService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(StepsService);
+    service = TestBed.inject(WizardService);
   });
 
   it('should be created', () => {

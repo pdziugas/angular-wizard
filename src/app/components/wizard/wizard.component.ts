@@ -2,6 +2,7 @@ import { Component, ContentChildren, Input, QueryList } from '@angular/core';
 import { Router } from '@angular/router';
 import { WizardStepDirective } from 'src/app/directives/wizard-step.directive';
 import { StepperModel } from 'src/app/models/stepper.model';
+import { FormPageComponent } from 'src/app/pages/form-page/form-page.component';
 
 @Component({
   selector: 'app-wizard',
@@ -41,9 +42,5 @@ export class WizardComponent {
 
   isLastStep(): boolean {
     return this.stepIndex + 1 === this.steps.length;
-  }
-
-  buttonText(): string {
-    return this.isLastStep() ? 'Finish' : 'Continue';
   }
 }

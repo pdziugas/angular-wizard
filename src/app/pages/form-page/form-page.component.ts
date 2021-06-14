@@ -10,36 +10,65 @@ export class FormPageComponent {
   constructor(private fb: FormBuilder) {}
 
   shippingForm = this.fb.group({
-    firstName: [null, [Validators.required, Validators.minLength(3)]],
-    lastName: [null, [Validators.required]],
-    phone: [null, [Validators.required]],
-    email: [null, [Validators.required, Validators.email]],
+    firstName: ['name', [Validators.required, Validators.minLength(3)]],
+    lastName: ['surname', [Validators.required]],
+    phone: [123345456, [Validators.required]],
+    email: ['email@mail.com', [Validators.required, Validators.email]],
     address: this.fb.group({
-      country: [null, [Validators.required]],
-      city: [null, [Validators.required]],
-      street: [null, [Validators.required]],
+      country: ['Lithuania', [Validators.required]],
+      city: ['Vilnius', [Validators.required]],
+      street: ['street', [Validators.required]],
       apartment: [null],
-      postalCode: [null, [Validators.required]],
+      postalCode: ['LT-12345', [Validators.required]],
+      // firstName: [null, [Validators.required, Validators.minLength(3)]],
+      // lastName: [null, [Validators.required]],
+      // phone: [null, [Validators.required]],
+      // email: [null, [Validators.required, Validators.email]],
+      // address: this.fb.group({
+      //   country: [null, [Validators.required]],
+      //   city: [null, [Validators.required]],
+      //   street: [null, [Validators.required]],
+      //   apartment: [null],
+      //   postalCode: [null, [Validators.required]],
     }),
   });
 
+  // TODO: maybe hide card number at the review screen?
   paymentForm = this.fb.group({
-    firstName: [null, [Validators.required, Validators.minLength(3)]],
-    lastName: [null, [Validators.required]],
-    cardNumber: [null, [Validators.required]],
+    firstName: ['name', [Validators.required, Validators.minLength(3)]],
+    lastName: ['surname', [Validators.required]],
+    cardNumber: ['1234 5678 9012 3456', [Validators.required]],
     cardData: this.fb.group({
       expMonth: [
-        null,
+        '12',
         [Validators.required, Validators.min(1), Validators.max(12)],
       ],
       expYear: [
-        null,
+        '2021',
         [Validators.required, Validators.min(2021), Validators.max(2027)],
       ],
       cvv: [
-        null,
+        '123',
         [Validators.required, Validators.minLength(3), Validators.maxLength(3)],
       ],
     }),
+
+    // firstName: [null, [Validators.required, Validators.minLength(3)]],
+    // lastName: [null, [Validators.required]],
+    // cardNumber: [null, [Validators.required]],
+    // cardData: this.fb.group({
+    //   expMonth: [
+    //     null,
+    //     [Validators.required, Validators.min(1), Validators.max(12)],
+    //   ],
+    //   expYear: [
+    //     null,
+    //     [Validators.required, Validators.min(2021), Validators.max(2027)],
+    //   ],
+    //   cvv: [
+    //     null,
+    //     [Validators.required, Validators.minLength(3), Validators.maxLength(3)],
+    //   ],
+    // }),
   });
 }

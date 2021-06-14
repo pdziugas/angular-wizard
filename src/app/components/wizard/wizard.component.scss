@@ -24,7 +24,7 @@
   margin: 2rem 1rem;
   padding: 1.5rem;
   border-radius: 1rem;
-  font-size: 2em;
+  font-size: $button-font-size;
   cursor: pointer;
   border: none !important;
   width: 100%;
@@ -35,7 +35,7 @@
   }
 
   &--back {
-    background: red;
+    background: $color-failure;
   }
 }
 
@@ -45,19 +45,19 @@
   justify-content: space-between;
   align-items: center;
   padding: 3.2rem 3.2rem 0;
-  margin-top: 32px;
+  margin-top: 3.2rem;
 }
 
 .step-titles-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2.4rem;
-  margin-top: 1rem;
+  padding: 0 $spacer-3;
+  margin-top: $spacer-1;
 }
 
 .step-bubble {
-  padding: 1rem;
+  padding: $spacer-1;
   border: 0.3rem solid $color-primary;
   width: 4rem;
   height: 4rem;
@@ -75,7 +75,7 @@
   height: 2px;
   background: $color-primary;
   flex: 1;
-  margin: 0px 10px;
+  margin: 0 1rem;
 }
 
 .step-current {
@@ -104,6 +104,6 @@
 }
 
 .step-name {
-  font-size: 1.6rem;
+  font-size: $default-font-size;
   font-weight: 600;
 }
