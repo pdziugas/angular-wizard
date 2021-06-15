@@ -1,8 +1,6 @@
-import { Component, ContentChildren, Input, QueryList } from '@angular/core';
+import { Component, ContentChildren, QueryList } from '@angular/core';
 import { Router } from '@angular/router';
 import { WizardStepDirective } from 'src/app/directives/wizard-step.directive';
-import { StepperModel } from 'src/app/models/stepper.model';
-import { FormPageComponent } from 'src/app/pages/form-page/form-page.component';
 
 @Component({
   selector: 'app-wizard',
@@ -10,8 +8,6 @@ import { FormPageComponent } from 'src/app/pages/form-page/form-page.component';
   styleUrls: ['./wizard.component.scss'],
 })
 export class WizardComponent {
-  @Input() step!: StepperModel;
-
   @ContentChildren(WizardStepDirective)
   stepsQueryList!: QueryList<WizardStepDirective>;
 
@@ -20,11 +16,15 @@ export class WizardComponent {
 
   constructor(private router: Router) {}
 
+  isLastStep(): boolean {
+    return this.stepIndex + 1 === this.steps.length;
+  }
+
   nextStep() {
     if (!this.isLastStep()) {
       this.stepIndex = this.stepIndex + 1;
     } else {
-      this.onSubmit();
+      this.wizardSubmit();
     }
   }
 
@@ -32,15 +32,12 @@ export class WizardComponent {
     this.stepIndex = this.stepIndex - 1;
   }
 
-  onSubmit(): void {
+  // TODO: this.event.submit(native events) @Output
+  wizardSubmit(): void {
     this.router.navigate(['/success']);
   }
 
   ngAfterContentInit() {
     this.steps = this.stepsQueryList.map((i) => i);
-  }
-
-  isLastStep(): boolean {
-    return this.stepIndex + 1 === this.steps.length;
   }
 }

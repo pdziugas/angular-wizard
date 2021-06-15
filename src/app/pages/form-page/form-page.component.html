@@ -103,7 +103,7 @@
       </form>
     </div>
   </ng-template>
-  <ng-template appWizardStep name="Review">
+  <ng-template appWizardStep [invalid]="review.invalid" name="Review">
     <div class="review-details-block">
       <h3>Shipping information:</h3>
       <div class="row">
@@ -189,6 +189,14 @@
           <div class="placeholder-text">Card cvv:</div>
           <div class="data-output">{{ paymentForm.value.cardData.cvv }}</div>
         </div>
+      </div>
+      <div class="confirmation">
+        <form [formGroup]="review">
+          <input type="checkbox" formControlName="confirmInformation" />
+          <span class="confirmation-text"
+            >I confirm that the information above I entered is correct</span
+          >
+        </form>
       </div>
     </div>
   </ng-template>

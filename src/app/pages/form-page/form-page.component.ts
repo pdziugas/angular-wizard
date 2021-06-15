@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form-page',
@@ -7,6 +7,7 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./form-page.component.scss'],
 })
 export class FormPageComponent {
+  static shippingForm: any;
   constructor(private fb: FormBuilder) {}
 
   shippingForm = this.fb.group({
@@ -33,7 +34,6 @@ export class FormPageComponent {
     }),
   });
 
-  // TODO: maybe hide card number at the review screen?
   paymentForm = this.fb.group({
     firstName: ['name', [Validators.required, Validators.minLength(3)]],
     lastName: ['surname', [Validators.required]],
@@ -70,5 +70,9 @@ export class FormPageComponent {
     //     [Validators.required, Validators.minLength(3), Validators.maxLength(3)],
     //   ],
     // }),
+  });
+
+  review = this.fb.group({
+    confirmInformation: [false, Validators.requiredTrue],
   });
 }

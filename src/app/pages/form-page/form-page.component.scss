@@ -75,3 +75,19 @@
 .data-output {
   font-size: $default-font-size;
 }
+
+.confirmation {
+  margin-top: $spacer-3;
+
+  &-checkbox {
+    color: yellow;
+    background-color: greenyellow;
+    border: 5px solid red;
+  }
+
+  &-text {
+    font-size: $default-font-size;
+    font-style: italic;
+    padding-left: $spacer-1;
+  }
+}
