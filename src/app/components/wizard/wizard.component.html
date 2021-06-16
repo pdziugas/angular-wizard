@@ -43,7 +43,7 @@
     <button
       class="form-btn"
       [disabled]="steps[stepIndex].invalid"
-      (click)="nextStep()"
+      (click)="!isLastStep() ? nextStep() : wizardSubmit()"
     >
       {{ isLastStep() ? "Finish" : "Continue" }}
     </button>

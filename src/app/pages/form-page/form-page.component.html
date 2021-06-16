@@ -1,4 +1,4 @@
-<app-wizard>
+<app-wizard [shippingForm]="shippingForm" [paymentForm]="paymentForm">
   <ng-template appWizardStep [invalid]="shippingForm.invalid" name="Shipping">
     <div class="form-container">
       <form class="contact" [formGroup]="shippingForm">
@@ -65,12 +65,12 @@
           <input
             type="text"
             placeholder="First name"
-            formControlName="firstName"
+            formControlName="cardholderFirstName"
           />
           <input
             type="text"
             placeholder="Last name"
-            formControlName="lastName"
+            formControlName="cardholderLastName"
           />
         </div>
         <div class="row">
@@ -113,7 +113,7 @@
         </div>
         <div class="placeholder">
           <div class="placeholder-text">Last name:</div>
-          <div class="data-output">{{ paymentForm.value.lastName }}</div>
+          <div class="data-output">{{ shippingForm.value.lastName }}</div>
         </div>
       </div>
       <div class="row">
@@ -164,7 +164,8 @@
         <div class="placeholder">
           <div class="placeholder-text">Cardholder:</div>
           <div class="data-output">
-            {{ paymentForm.value.firstName }} {{ paymentForm.value.lastName }}
+            {{ paymentForm.value.cardholderFirstName }}
+            {{ paymentForm.value.cardholderLastName }}
           </div>
         </div>
         <div class="placeholder">

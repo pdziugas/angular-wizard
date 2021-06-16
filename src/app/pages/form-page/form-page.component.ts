@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form-page',
@@ -7,7 +7,6 @@ import { FormBuilder, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./form-page.component.scss'],
 })
 export class FormPageComponent {
-  static shippingForm: any;
   constructor(private fb: FormBuilder) {}
 
   shippingForm = this.fb.group({
@@ -35,20 +34,23 @@ export class FormPageComponent {
   });
 
   paymentForm = this.fb.group({
-    firstName: ['name', [Validators.required, Validators.minLength(3)]],
-    lastName: ['surname', [Validators.required]],
+    cardholderFirstName: [
+      'cardholder firstName',
+      [Validators.required, Validators.minLength(3)],
+    ],
+    cardholderLastName: ['cardholder surname', [Validators.required]],
     cardNumber: ['1234 5678 9012 3456', [Validators.required]],
     cardData: this.fb.group({
       expMonth: [
-        '12',
+        12,
         [Validators.required, Validators.min(1), Validators.max(12)],
       ],
       expYear: [
-        '2021',
+        2021,
         [Validators.required, Validators.min(2021), Validators.max(2027)],
       ],
       cvv: [
-        '123',
+        123,
         [Validators.required, Validators.minLength(3), Validators.maxLength(3)],
       ],
     }),

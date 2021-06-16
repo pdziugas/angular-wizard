@@ -1,4 +1,5 @@
-import { Component, ContentChildren, QueryList } from '@angular/core';
+import { Component, ContentChildren, Input, QueryList } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { WizardStepDirective } from 'src/app/directives/wizard-step.directive';
 
@@ -14,6 +15,9 @@ export class WizardComponent {
   steps: WizardStepDirective[] = [];
   stepIndex = 0;
 
+  @Input() shippingForm!: FormGroup;
+  @Input() paymentForm!: FormGroup;
+
   constructor(private router: Router) {}
 
   isLastStep(): boolean {
@@ -21,20 +25,20 @@ export class WizardComponent {
   }
 
   nextStep() {
-    if (!this.isLastStep()) {
-      this.stepIndex = this.stepIndex + 1;
-    } else {
-      this.wizardSubmit();
-    }
+    this.stepIndex = this.stepIndex + 1;
   }
 
   prevStep() {
     this.stepIndex = this.stepIndex - 1;
   }
 
-  // TODO: this.event.submit(native events) @Output
   wizardSubmit(): void {
+    let object = Object.assign(this.shippingForm.value, this.paymentForm.value);
+    console.log(object);
+
     this.router.navigate(['/success']);
+
+    alert(JSON.stringify(object));
   }
 
   ngAfterContentInit() {
