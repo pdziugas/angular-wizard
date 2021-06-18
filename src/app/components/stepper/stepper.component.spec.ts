@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { SuccessPageComponent } from './success-page.component';
+import { StepperComponent } from './stepper.component';
 
-describe('SuccessPageComponent', () => {
-  let component: SuccessPageComponent;
-  let fixture: ComponentFixture<SuccessPageComponent>;
+describe('StepperComponent', () => {
+  let component: StepperComponent;
+  let fixture: ComponentFixture<StepperComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [SuccessPageComponent],
+      declarations: [StepperComponent],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SuccessPageComponent);
+    fixture = TestBed.createComponent(StepperComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

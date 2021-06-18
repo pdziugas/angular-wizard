@@ -8,6 +8,7 @@ import { WizardComponent } from './components/wizard/wizard.component';
 import { WizardStepDirective } from './directives/wizard-step.directive';
 import { FormPageComponent } from './pages/form-page/form-page.component';
 import { SuccessPageComponent } from './pages/success-page/success-page.component';
+import { StepperComponent } from './components/stepper/stepper.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { SuccessPageComponent } from './pages/success-page/success-page.componen
     SuccessPageComponent,
     WizardComponent,
     WizardStepDirective,
+    StepperComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],

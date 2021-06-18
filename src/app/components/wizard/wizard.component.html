@@ -1,29 +1,5 @@
 <div class="form-page">
-  <div class="step-bubbles-container">
-    <ng-container
-      *ngFor="let step of steps; let lastItem = last; let i = index"
-    >
-      <div
-        [ngClass]="{
-          'step-complete': i < stepIndex,
-          'step-incomplete': i > stepIndex,
-          'step-current': i === stepIndex
-        }"
-        class="step-bubble"
-      >
-        {{ i + 1 }}
-      </div>
-      <div *ngIf="!lastItem" class="step-divider"></div>
-    </ng-container>
-  </div>
-
-  <div class="step-titles-container">
-    <ng-container
-      *ngFor="let step of steps; let lastItem = last; let i = index"
-    >
-      <div class="step-name">{{ step.name }}</div>
-    </ng-container>
-  </div>
+  <app-stepper [steps]="steps" [stepIndex]="stepIndex"></app-stepper>
 
   <div
     *ngFor="let step of steps; let i = index"
@@ -43,9 +19,9 @@
     <button
       class="form-btn"
       [disabled]="steps[stepIndex].invalid"
-      (click)="!isLastStep() ? nextStep() : wizardSubmit()"
+      (click)="nextStep()"
     >
-      {{ isLastStep() ? "Finish" : "Continue" }}
+      {{ isLastStep ? "Finish" : "Continue" }}
     </button>
   </div>
 </div>

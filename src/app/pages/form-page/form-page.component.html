@@ -1,4 +1,4 @@
-<app-wizard [shippingForm]="shippingForm" [paymentForm]="paymentForm">
+<app-wizard (wizardSubmit)="wizardSubmit()">
   <ng-template appWizardStep [invalid]="shippingForm.invalid" name="Shipping">
     <div class="form-container">
       <form class="contact" [formGroup]="shippingForm">
