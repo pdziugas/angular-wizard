@@ -1,36 +1,50 @@
+import { Component, ViewChild } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { WizardStepDirective } from 'src/app/directives/wizard-step.directive';
 import { WizardComponent } from './wizard.component';
 
+@Component({
+  template: `<app-wizard
+    ><ng-template appWizardStep></ng-template
+  ></app-wizard>`,
+})
+class HostComponent {
+  @ViewChild(WizardComponent) templateRef!: WizardComponent;
+}
+
 describe('WizardComponent', () => {
   let component: WizardComponent;
-  let fixture: ComponentFixture<WizardComponent>;
-  let directive: WizardStepDirective;
+  let hostComponent: HostComponent;
+  let fixture: ComponentFixture<HostComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [WizardComponent, WizardStepDirective],
+      declarations: [WizardComponent, HostComponent, WizardStepDirective],
       imports: [RouterModule.forRoot([])],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WizardComponent);
-    component = fixture.componentInstance;
+    fixture = TestBed.createComponent(HostComponent);
+    hostComponent = fixture.componentInstance;
     fixture.detectChanges();
+    component = hostComponent.templateRef;
   });
 
-  // it('should create an instance', () => {
-  //   directive = fixture.debugElement.queryAllNodes(
-  //     By.directive(WizardStepDirective)
-  //   )[0];
-  //   // const directive = new WizardStepDirective();
-  //   expect(directive).toBeTruthy();
-  // });
-
-  xit('should create', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should show previous step on prevStep()', () => {
+    spyOn(component, 'prevStep').and.callThrough();
+    component.prevStep();
+    expect(component.prevStep).toHaveBeenCalled();
+  });
+
+  it('should show next step on nextStep()', () => {
+    spyOn(component, 'nextStep').and.callThrough();
+    component.nextStep();
+    expect(component.nextStep).toHaveBeenCalled();
   });
 });
