@@ -1,0 +1,27 @@
+<div class="form-page">
+  <app-stepper [steps]="steps" [stepIndex]="stepIndex"></app-stepper>
+
+  <div
+    *ngFor="let step of steps; let i = index"
+    [style.display]="i === stepIndex ? 'block' : 'none'"
+  >
+    <ng-container *ngTemplateOutlet="step.templateRef"></ng-container>
+  </div>
+
+  <div class="buttons">
+    <button
+      class="form-btn form-btn--back"
+      *ngIf="stepIndex !== 0"
+      (click)="prevStep()"
+    >
+      Previous
+    </button>
+    <button
+      class="form-btn"
+      [disabled]="steps[stepIndex].invalid"
+      (click)="nextStep()"
+    >
+      {{ isLastStep ? "Finish" : "Continue" }}
+    </button>
+  </div>
+</div>

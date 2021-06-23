@@ -1,0 +1,40 @@
+@import "../../../sass/abstracts/variables.scss";
+
+.form-page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.form-next-button {
+  background-color: $color-primary;
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+}
+
+.form-btn {
+  color: $color-high-contrast;
+  background: $color-primary;
+  margin: 2rem 1rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  font-size: $button-font-size;
+  cursor: pointer;
+  border: none !important;
+  width: 100%;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed !important;
+  }
+
+  &--back {
+    background: $color-failure;
+  }
+}

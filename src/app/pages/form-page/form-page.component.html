@@ -1,0 +1,204 @@
+<app-wizard (wizardSubmit)="wizardSubmit()">
+  <ng-template appWizardStep [invalid]="shippingForm.invalid" name="Shipping">
+    <div class="form-container">
+      <form class="contact" [formGroup]="shippingForm">
+        <h3>Your shipping details</h3>
+        <div class="row">
+          <input
+            type="text"
+            placeholder="First name"
+            formControlName="firstName"
+          />
+          <input
+            type="text"
+            placeholder="Last name"
+            formControlName="lastName"
+          />
+        </div>
+        <div class="row">
+          <input
+            type="number"
+            placeholder="Phone number"
+            formControlName="phone"
+          />
+          <input
+            type="email"
+            placeholder="Email address"
+            formControlName="email"
+          />
+        </div>
+        <div formGroupName="address">
+          <div class="row">
+            <input
+              type="text"
+              placeholder="Country"
+              formControlName="country"
+            />
+            <input type="text" placeholder="City" formControlName="city" />
+          </div>
+          <div class="row">
+            <input
+              type="text"
+              placeholder="Street name and house number"
+              formControlName="street"
+            />
+            <input
+              type="text"
+              placeholder="Apartment, suite, unit etc. (optional)"
+              formControlName="apartment"
+            />
+            <input
+              placeholder="Postal code"
+              type="text"
+              formControlName="postalCode"
+            />
+          </div>
+        </div>
+      </form>
+    </div>
+  </ng-template>
+  <ng-template appWizardStep [invalid]="paymentForm.invalid" name="Payment">
+    <div class="form-container">
+      <form class="contact" [formGroup]="paymentForm">
+        <h3>Your payment details</h3>
+        <div class="row">
+          <input
+            type="text"
+            placeholder="First name"
+            formControlName="cardholderFirstName"
+          />
+          <input
+            type="text"
+            placeholder="Last name"
+            formControlName="cardholderLastName"
+          />
+        </div>
+        <div class="row">
+          <input
+            type="text"
+            placeholder="1234 **** **** ****"
+            formControlName="cardNumber"
+          />
+        </div>
+        <div formGroupName="cardData">
+          <div class="row">
+            <input
+              type="number"
+              placeholder="Exp. Month"
+              formControlName="expMonth"
+            />
+            <input
+              type="number"
+              placeholder="Exp. Year"
+              formControlName="expYear"
+            />
+            <input
+              type="number"
+              placeholder="CVV"
+              formControlName="cvv"
+              ng-maxlength="3"
+            />
+          </div>
+        </div>
+      </form>
+    </div>
+  </ng-template>
+  <ng-template appWizardStep [invalid]="review.invalid" name="Review">
+    <div class="review-details-block">
+      <h3>Shipping information:</h3>
+      <div class="row">
+        <div class="placeholder">
+          <div class="placeholder-text">First name:</div>
+          <div class="data-output">{{ shippingForm.value.firstName }}</div>
+        </div>
+        <div class="placeholder">
+          <div class="placeholder-text">Last name:</div>
+          <div class="data-output">{{ shippingForm.value.lastName }}</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="placeholder">
+          <div class="placeholder-text">Phone:</div>
+          <div class="data-output">{{ shippingForm.value.phone }}</div>
+        </div>
+        <div class="placeholder">
+          <div class="placeholder-text">Email:</div>
+          <div class="data-output">{{ shippingForm.value.email }}</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="placeholder">
+          <div class="placeholder-text">Country:</div>
+          <div class="data-output">
+            {{ shippingForm.value.address.country }}
+          </div>
+        </div>
+        <div class="placeholder">
+          <div class="placeholder-text">City:</div>
+          <div class="data-output">{{ shippingForm.value.address.city }}</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="placeholder">
+          <div class="placeholder-text">Street:</div>
+          <div class="data-output">{{ shippingForm.value.address.street }}</div>
+        </div>
+        <div class="placeholder">
+          <div class="placeholder-text">Apartment:</div>
+          <div class="data-output">
+            {{ shippingForm.value.address.apartment }}
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="placeholder">
+          <div class="placeholder-text">Postal code:</div>
+          <div class="data-output">
+            {{ shippingForm.value.address.postalCode }}
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <h3>Payment information:</h3>
+      <div class="row">
+        <div class="placeholder">
+          <div class="placeholder-text">Cardholder:</div>
+          <div class="data-output">
+            {{ paymentForm.value.cardholderFirstName }}
+            {{ paymentForm.value.cardholderLastName }}
+          </div>
+        </div>
+        <div class="placeholder">
+          <div class="placeholder-text">Card number:</div>
+          <div class="data-output">{{ paymentForm.value.cardNumber }}</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="placeholder">
+          <div class="placeholder-text">Card exp. month:</div>
+          <div class="data-output">
+            {{ paymentForm.value.cardData.expMonth }}
+          </div>
+        </div>
+        <div class="placeholder">
+          <div class="placeholder-text">Card exp. year:</div>
+          <div class="data-output">
+            {{ paymentForm.value.cardData.expYear }}
+          </div>
+        </div>
+        <div class="placeholder">
+          <div class="placeholder-text">Card cvv:</div>
+          <div class="data-output">{{ paymentForm.value.cardData.cvv }}</div>
+        </div>
+      </div>
+      <div class="confirmation">
+        <form [formGroup]="review">
+          <input type="checkbox" formControlName="confirmInformation" />
+          <span class="confirmation-text"
+            >I confirm that the information above I entered is correct</span
+          >
+        </form>
+      </div>
+    </div>
+  </ng-template>
+</app-wizard>

@@ -1,0 +1,87 @@
+@import "../../../sass/abstracts/variables.scss";
+
+.form-container {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 3rem;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.contact {
+  background: $color-card-background;
+  padding: $spacer-3;
+  margin: 15rem 0;
+  box-shadow: $card-shadow-0;
+  border-radius: $spacer-1;
+}
+
+.contact h3 {
+  display: block;
+  font-size: $title-font-size;
+  font-weight: 400;
+  margin-bottom: $spacer-1;
+}
+
+.contact input {
+  width: 100%;
+  background: $color-input-field;
+  border: none;
+  color: $color-high-contrast;
+  border-radius: $spacer-1;
+  margin: $spacer-1;
+  padding: $spacer-1;
+}
+
+.review-details-block {
+  background: $color-card-background;
+  padding: $spacer-3;
+  margin: 15rem 0;
+  box-shadow: $card-shadow-0;
+  border-radius: $spacer-1;
+
+  & h3 {
+    display: block;
+    font-size: $title-font-size;
+    font-weight: 400;
+    margin-bottom: $spacer-2;
+  }
+}
+
+.divider {
+  height: 1px;
+  background: $color-dark-grey;
+  flex: 1;
+  margin: 2rem 1rem;
+}
+
+.placeholder {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: $spacer-0;
+
+  &-text {
+    font-weight: 600;
+    font-size: $default-font-size;
+    margin-right: $spacer-1;
+  }
+}
+
+.data-output {
+  font-size: $default-font-size;
+}
+
+.confirmation {
+  margin-top: $spacer-3;
+
+  &-text {
+    font-size: $default-font-size;
+    font-style: italic;
+    padding-left: $spacer-1;
+  }
+}

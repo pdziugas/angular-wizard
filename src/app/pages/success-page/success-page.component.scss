@@ -1,0 +1,22 @@
+@import "../../../sass/abstracts/variables.scss";
+
+.success-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+svg#checkbox {
+  width: 20rem;
+  height: 20rem;
+  stroke: $color-success;
+  stroke-width: 3;
+  fill: $color-background;
+}
+
+.success-message {
+  padding-top: 5rem;
+  font-size: 4rem;
+}
