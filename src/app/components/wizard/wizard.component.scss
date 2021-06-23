@@ -10,7 +10,7 @@
 }
 
 .form-next-button {
-  background-color: $color-primary;
+  background-color: var(--color-primary);
 }
 
 .buttons {
@@ -19,8 +19,8 @@
 }
 
 .form-btn {
-  color: $color-high-contrast;
-  background: $color-primary;
+  color: $color-white;
+  background: var(--color-primary);
   margin: 2rem 1rem;
   padding: 1.5rem;
   border-radius: 1rem;
@@ -35,6 +35,6 @@
   }
 
   &--back {
-    background: $color-failure;
+    background: var(--color-failure);
   }
 }

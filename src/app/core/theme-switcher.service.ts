@@ -1,4 +1,4 @@
-import { Injectable, PACKAGE_ROOT_URL } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 enum Theme {
@@ -25,10 +25,12 @@ export class ThemeSwitcherService {
     this.theme$.next(Theme.Light);
     localStorage.setItem('theme', 'light-theme');
   }
+
   enableDarkTheme() {
     this.theme$.next(Theme.Dark);
     localStorage.setItem('theme', 'dark-theme');
   }
+
   enableOrangeTheme() {
     this.theme$.next(Theme.Orange);
     localStorage.setItem('theme', 'orange-theme');

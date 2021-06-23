@@ -1,0 +1,124 @@
+@import "../../../sass/abstracts/_variables.scss";
+@import "../../../sass/abstracts/_mixins.scss";
+
+.nav {
+  z-index: 10;
+  height: 5rem;
+  width: 100%;
+  top: 0;
+  background-color: var(--color-primary);
+  justify-content: space-between;
+}
+.nav-header {
+  display: inline;
+  line-height: 3rem;
+}
+
+.nav-title {
+  display: inline-block;
+  font-size: $default-font-size;
+  color: var(--color-high-contrast);
+  padding: $spacer-1;
+  width: 5rem;
+  cursor: pointer;
+}
+
+// hamburger styles
+.nav-btn {
+  display: none;
+
+  @media (max-width: 600px) {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+}
+
+label {
+  @media (max-width: 600px) {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding: 13px;
+  }
+}
+
+span {
+  @media (max-width: 600px) {
+    display: block;
+    width: 2.5rem;
+    height: 1rem;
+    border-top: 2px solid var(--color-high-contrast);
+  }
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  padding-right: 2rem;
+  float: right;
+  z-index: 1;
+  line-height: 5rem;
+  font-size: $default-font-size;
+  height: 100%;
+
+  @media (max-width: 600px) {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: var(--color-primary);
+    height: 0px;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 50px;
+    left: 0px;
+  }
+}
+
+.theme-switcher {
+  display: flex;
+  flex-direction: row;
+  margin: 1.5rem;
+
+  @media (max-width: 600px) {
+    position: absolute;
+    display: block;
+  }
+
+  &--button {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 100%;
+    border: 1px solid grey;
+    margin-left: 0.5rem;
+    cursor: pointer;
+  }
+}
+
+#nav-check {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  #nav-check:not(:checked) ~ .nav-links {
+    height: 0px;
+  }
+
+  #nav-check:checked ~ .nav-links {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+  }
+}
+
+.theme-button--light {
+  background-color: #f3f3f3;
+}
+
+.theme-button--dark {
+  background-color: #1f1f1f;
+}
+
+.theme-button--orange {
+  background-color: #f0aa12;
+}

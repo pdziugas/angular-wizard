@@ -13,10 +13,10 @@
 }
 
 .contact {
-  background: $color-card-background;
+  background: var(--color-card-background);
   padding: $spacer-3;
   margin: 15rem 0;
-  box-shadow: $card-shadow-0;
+  box-shadow: var(--card-shadow-0);
   border-radius: $spacer-1;
 }
 
@@ -29,19 +29,19 @@
 
 .contact input {
   width: 100%;
-  background: $color-input-field;
+  background: var(--color-input-field);
   border: none;
-  color: $color-high-contrast;
+  color: var(--color-high-contrast);
   border-radius: $spacer-1;
   margin: $spacer-1;
   padding: $spacer-1;
 }
 
 .review-details-block {
-  background: $color-card-background;
+  background: var(--color-card-background);
   padding: $spacer-3;
   margin: 15rem 0;
-  box-shadow: $card-shadow-0;
+  box-shadow: var(--card-shadow-0);
   border-radius: $spacer-1;
 
   & h3 {
@@ -54,7 +54,7 @@
 
 .divider {
   height: 1px;
-  background: $color-dark-grey;
+  background: var(--color-dark-grey);
   flex: 1;
   margin: 2rem 1rem;
 }

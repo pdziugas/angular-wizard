@@ -17,6 +17,14 @@ describe('WizardComponent', () => {
   let component: WizardComponent;
   let hostComponent: HostComponent;
   let fixture: ComponentFixture<HostComponent>;
+  let stepIndex: number;
+  let steps: [] = [];
+
+  const getters = {
+    get isLastStep(): boolean {
+      return stepIndex + 1 === steps.length;
+    },
+  };
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -45,6 +53,16 @@ describe('WizardComponent', () => {
   it('should show next step on nextStep()', () => {
     spyOn(component, 'nextStep').and.callThrough();
     component.nextStep();
+    expect(component.nextStep).toHaveBeenCalled();
+  });
+
+  it('should go to next step if is not the last step', () => {
+    getters.isLastStep === false;
+    spyOn(component, 'nextStep').and.callThrough();
+    component.nextStep();
+
+    fixture.detectChanges();
+
     expect(component.nextStep).toHaveBeenCalled();
   });
 });

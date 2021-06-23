@@ -18,33 +18,32 @@
 
 .step-bubble {
   padding: $spacer-1;
-  border: 0.3rem solid $color-primary;
+  border: 0.3rem solid var(--color-primary);
   width: 4rem;
   height: 4rem;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  color: $color-primary;
+  color: var(--color-primary);
   font-size: 2rem;
-  cursor: pointer;
   user-select: none;
 }
 
 .step-divider {
   height: 2px;
-  background: $color-primary;
+  background: var(--color-primary);
   flex: 1;
   margin: 0 1rem;
 }
 
 .step-current {
-  background: $color-primary;
-  color: $color-high-contrast;
+  background: var(--color-primary);
+  color: $color-white;
 }
 
 .step-complete {
-  border: 0.3rem solid $color-success;
+  border: 0.3rem solid var(--color-success);
   color: transparent;
   background-color: transparent;
   background-image: url(../../../assets/check.svg);
@@ -53,7 +52,7 @@
   background-position: center;
 
   svg#checkbox {
-    stroke: $color-success;
+    stroke: var(--color-success);
     stroke-width: 20;
   }
 }
