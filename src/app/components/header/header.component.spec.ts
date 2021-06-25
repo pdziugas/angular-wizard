@@ -24,6 +24,7 @@ describe('HeaderComponent', () => {
   });
 
   it('should redirect to home screen if clicked on logo', () => {
+    spyOn(component, 'goHome').and.callThrough();
     component.goHome();
     expect(component.goHome).toHaveBeenCalled();
   });

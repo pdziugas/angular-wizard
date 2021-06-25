@@ -22,9 +22,7 @@ export class WizardComponent {
   @Output() wizardSubmit = new EventEmitter<string>();
 
   nextStep() {
-    this.isLastStep
-      ? this.wizardSubmit.emit()
-      : (this.stepIndex = this.stepIndex + 1);
+    this.stepIndex = this.stepIndex + 1;
   }
 
   prevStep() {

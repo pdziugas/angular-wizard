@@ -14,6 +14,6 @@ export class HeaderComponent {
   ) {}
 
   goHome() {
-    this.router.navigate(['form']);
+    this.router.navigate(['/form']);
   }
 }

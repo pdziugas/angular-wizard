@@ -5,29 +5,13 @@ describe('ThemeSwitcherService', () => {
   let service: ThemeSwitcherService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      providers: [ThemeSwitcherService],
+    });
     service = TestBed.inject(ThemeSwitcherService);
   });
 
-  it('should be created', () => {
+  it('should create the service', () => {
     expect(service).toBeTruthy();
-  });
-
-  it('should change to light theme', () => {
-    service.enableLightTheme();
-
-    expect(service.enableLightTheme).toHaveBeenCalled();
-  });
-
-  it('should change to dark theme', () => {
-    service.enableDarkTheme();
-
-    expect(service.enableDarkTheme).toHaveBeenCalled();
-  });
-
-  it('should change to orange theme', () => {
-    service.enableOrangeTheme();
-
-    expect(service.enableOrangeTheme).toHaveBeenCalled();
   });
 });

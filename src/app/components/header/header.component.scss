@@ -111,14 +111,14 @@ span {
   }
 }
 
-.theme-button--light {
-  background-color: #f3f3f3;
-}
+$theme-button-colors: (
+  light: #f3f3f3,
+  dark: #1f1f1f,
+  orange: #f0aa12,
+);
 
-.theme-button--dark {
-  background-color: #1f1f1f;
-}
-
-.theme-button--orange {
-  background-color: #f0aa12;
+@each $type, $color in $theme-button-colors {
+  .theme-button--#{$type} {
+    background-color: $color;
+  }
 }
