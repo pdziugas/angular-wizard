@@ -11,9 +11,9 @@
 svg#checkbox {
   width: 20rem;
   height: 20rem;
-  stroke: $color-success;
+  stroke: var(--color-success);
   stroke-width: 3;
-  fill: $color-background;
+  fill: var(--color-background);
 }
 
 .success-message {

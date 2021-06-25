@@ -17,8 +17,10 @@ html {
 
 body {
   box-sizing: border-box;
-  background-color: $color-background;
-  color: $color-low-contrast;
+  // background-color: $color-background;
+  // color: $color-low-contrast;
+  background-color: var(--color-background);
+  color: var(--color-low-contrast);
 
   height: 100%;
   width: 100%;

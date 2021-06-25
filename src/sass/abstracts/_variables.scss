@@ -1,20 +1,60 @@
-// PRIMARY COLORS
-$color-primary: #14aaf5;
-$color-success: #23c274;
-$color-failure: #ff0000;
+// === LIGHT THEME ===
+.light-theme {
+  // PRIMARY COLORS
+  --color-primary: #2182f1;
+  --color-success: #0d9955;
+  --color-failure: #c20101;
 
-// HEADER & CONTRAST COLORS
-$color-high-contrast: #fff;
-$color-low-contrast: #e5e5e5;
+  // HEADER & CONTRAST COLORS
+  --color-high-contrast: #000;
+  --color-low-contrast: #1a1a1a;
 
-// BACKGROUND, SURFACE, CARD COLORS & SHADOWS
-$color-background: #1f1f1f;
-$color-card-background: #282828;
-$color-input-field: #171717;
-$color-dark-grey: #5c5c5c;
-$card-shadow-0: 0 0 2rem 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  // BACKGROUND, SURFACE, CARD COLORS & SHADOWS
+  --color-background: #f3f3f3;
+  --color-card-background: #d6d6d6;
+  --color-input-field: #ffffff;
+  --card-shadow-0: 0 0 2rem 0 rgba(0, 0, 0, 0.2),
+    0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+// === DARK THEME ===
+.dark-theme {
+  --color-primary: #14aaf5;
+  --color-success: #23c274;
+  --color-failure: #ff0000;
+
+  --color-high-contrast: #fff;
+  --color-low-contrast: #e5e5e5;
+
+  --color-background: #1f1f1f;
+  --color-card-background: #282828;
+  --color-input-field: #171717;
+  --card-shadow-0: 0 0 2rem 0 rgba(0, 0, 0, 0.2),
+    0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+// === ORANGE THEME ===
+.orange-theme {
+  --color-primary: #f0aa12;
+  --color-success: #0d9955;
+  --color-failure: #e41d1d;
+
+  --color-high-contrast: #000;
+  --color-low-contrast: #1a1a1a;
+
+  --color-background: #f3f3f3;
+  --color-card-background: #f0c26e;
+  --color-input-field: #ffffff;
+  --card-shadow-0: 0 0 2rem 0 rgba(0, 0, 0, 0.2),
+    0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+// === OTHER COLORS ===
+$color-dark-grey: #110808;
+$color-white: #fff;
 
 // FONT SIZES
+$small-font-size: 1.6rem;
 $default-font-size: 1.6rem;
 $button-font-size: 2rem;
 $title-font-size: 3rem;

@@ -40,11 +40,13 @@ describe('WizardComponent', () => {
     spyOn(component, 'prevStep').and.callThrough();
     component.prevStep();
     expect(component.prevStep).toHaveBeenCalled();
+    expect(component.stepIndex).toBe(-1);
   });
 
   it('should show next step on nextStep()', () => {
     spyOn(component, 'nextStep').and.callThrough();
     component.nextStep();
     expect(component.nextStep).toHaveBeenCalled();
+    expect(component.stepIndex).toBe(1);
   });
 });
